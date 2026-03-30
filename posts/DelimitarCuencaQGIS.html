@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Delimitación de Cuencas con QGIS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #1e3a5f;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Delimitación de Cuencas con QGIS</h1>
+</header>
+
+<section>
+
+    <div class="card">
+        <h2>¿Qué es la delimitación de cuencas?</h2>
+        <p>
+            La delimitación de cuencas es el proceso mediante el cual se define el área que aporta escurrimiento a un punto de salida determinado.
+        </p>
+        <img src="img/cuenca.png" alt="Cuenca hidrográfica">
+    </div>
+
+    <div class="card">
+        <h2>Datos necesarios</h2>
+        <ul>
+            <li>Modelo Digital de Elevación (MDE)</li>
+            <li>Punto de salida (Outlet)</li>
+            <li>Software QGIS</li>
+        </ul>
+        <img src="img/mde.png" alt="Modelo digital de elevación">
+    </div>
+
+    <div class="card">
+        <h2>Procedimiento en QGIS</h2>
+
+        <h3>1. Cargar el MDE</h3>
+        <p>Importar el modelo digital de elevación en QGIS.</p>
+        <img src="img/qgis_mde.png">
+
+        <h3>2. Rellenar depresiones (Fill sinks)</h3>
+        <p>Corregir errores en el modelo para asegurar flujo continuo.</p>
+        <img src="img/fill.png">
+
+        <h3>3. Dirección de flujo</h3>
+        <p>Calcular la dirección del flujo del agua.</p>
+        <img src="img/flow_direction.png">
+
+        <h3>4. Acumulación de flujo</h3>
+        <p>Identificar zonas donde se concentra el escurrimiento.</p>
+        <img src="img/flow_accumulation.png">
+
+        <h3>5. Definir punto de salida</h3>
+        <p>Ubicar el punto donde se desea delimitar la cuenca.</p>
+        <img src="img/outlet.png">
+
+        <h3>6. Delimitación de la cuenca</h3>
+        <p>Generar el polígono de la cuenca a partir del punto seleccionado.</p>
+        <img src="img/watershed.png">
+    </div>
+
+    <div class="card">
+        <h2>Resultado</h2>
+        <p>
+            Se obtiene el límite de la cuenca hidrográfica, el cual puede exportarse como archivo shapefile o GeoJSON para su análisis posterior.
+        </p>
+        <img src="img/cuenca_resultado.png">
+    </div>
+
+    <div class="card">
+        <h2>Aplicaciones</h2>
+        <ul>
+            <li>Análisis hidrológico</li>
+            <li>Estimación de caudales</li>
+            <li>Estudios de inundación</li>
+            <li>Diseño de obras hidráulicas</li>
+        </ul>
+    </div>
+
+</section>
+
+<footer>
+    <p>Hidrología Aplicada</p>
+</footer>
+
+</body>
+</html>
