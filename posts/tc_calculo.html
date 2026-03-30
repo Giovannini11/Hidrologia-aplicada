@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora de Tc</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f8;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    background: #1f4e79;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #163a5c;
+}
+
+.result {
+    margin-top: 15px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🧮 Calculadora de Tiempo de Concentración</h2>
+
+        <label>L (Longitud del cauce)</label>
+        <input type="number" id="L" placeholder="Ej. 2.5">
+
+        <label>S (Pendiente)</label>
+        <input type="number" id="S" placeholder="Ej. 0.02">
+
+        <label>D (Desnivel)</label>
+        <input type="number" id="D" placeholder="Ej. 120">
+
+        <button onclick="calcular()">Calcular Tc</button>
+
+        <div class="result" id="resultado"></div>
+    </div>
+
+</div>
+
+<script>
+function calcular() {
+
+    let L = parseFloat(document.getElementById("L").value);
+    let S = parseFloat(document.getElementById("S").value);
+    let D = parseFloat(document.getElementById("D").value);
+
+    // Kirpich (ejemplo clásico)
+    let Tc_kirpich = 0.000325 * Math.pow(L*1000, 0.77) * Math.pow(S, -0.385);
+
+    // SCS
+    let Tc_scs = Math.pow(L*1000, 1.15) / (3085 * Math.pow(D, 0.38));
+
+    // Rowe
+    let Tc_rowe = Math.pow((0.87 * Math.pow(L, 3) / D), 0.385);
+
+    document.getElementById("resultado").innerHTML =
+        "⏱ Kirpich: " + Tc_kirpich.toFixed(2) + " hr<br>" +
+        "⏱ SCS: " + Tc_scs.toFixed(2) + " hr<br>" +
+        "⏱ Rowe: " + Tc_rowe.toFixed(2) + " hr";
+}
+</script>
+
+</body>
+</html>
