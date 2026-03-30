@@ -132,7 +132,7 @@ function calcular() {
     let Tc_scs = Math.pow(L, 1.15) / (3085 * Math.pow(D, 0.38));
 
     // 🔹 Rowe
-    let Tc_rowe = Math.pow((0.87 * Math.pow(L, 3) / D), 0.385);
+    let Tc_rowe = Math.pow((0.87 * Math.pow(L/1000, 3) / D), 0.385);
 
     document.getElementById("resultado").innerHTML =
         "⏱ Kirpich: " + Tc_kirpich.toFixed(2) + " hr<br>" +
