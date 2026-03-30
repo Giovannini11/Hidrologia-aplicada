@@ -82,13 +82,14 @@ function calcular() {
     let D = parseFloat(document.getElementById("D").value);
 
     // Kirpich (ejemplo clásico)
-    let Tc_kirpich = 0.000325 * Math.pow((L/Math.pow(S, 0.5), 0.77);
+// Kirpich (ejemplo clásico)
+let Tc_kirpich = 0.000325 * Math.pow(L / Math.sqrt(S), 0.77);
 
-    // SCS
-    let Tc_scs = Math.pow(L, 1.15) / (3085 * Math.pow(D, 0.38));
+// SCS
+let Tc_scs = Math.pow(L, 1.15) / (3085 * Math.pow(D, 0.38));
 
-    // Rowe
-    let Tc_rowe = Math.pow((0.87 * Math.pow(L, 3) / D), 0.385);
+// Rowe
+let Tc_rowe = Math.pow((0.87 * Math.pow(L/1000, 3) / D), 0.385);
 
     document.getElementById("resultado").innerHTML =
         "⏱ Kirpich: " + Tc_kirpich.toFixed(2) + " hr<br>" +
