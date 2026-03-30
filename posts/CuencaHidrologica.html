@@ -1,60 +1,172 @@
-<section>
-    <h1>Cuenca Hidrológica</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuenca Hidrológica</title>
 
-    <p>
-        Una cuenca hidrológica es el área de terreno donde toda el agua de lluvia que cae
-        drena hacia un punto común, como un río, lago o presa. Está delimitada naturalmente
-        por divisorias topográficas.
-    </p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222;
+        }
 
-    <h2>Parteaguas o Divisoria de Aguas</h2>
-    <p>
-        El parteaguas es la línea imaginaria que separa una cuenca de otra. Está formada por
-        los puntos más altos del terreno y define hacia dónde fluye el escurrimiento.
-    </p>
+        header {
+            background-color: #b8b9d4;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
 
-    <h2>Delimitación de una Cuenca</h2>
-    <p>
-        La delimitación consiste en trazar el contorno de la cuenca siguiendo las elevaciones
-        del terreno. Puede realizarse manualmente con mapas topográficos o mediante Sistemas de
-        Información Geográfica (SIG).
-    </p>
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
 
-    <h2>Tipos de Cuencas</h2>
-    <ul>
-        <li><strong>Exorreicas:</strong> Drenan hacia el mar o cuerpos de agua externos.</li>
-        <li><strong>Endorreicas:</strong> El agua se acumula en el interior sin salida al mar.</li>
-        <li><strong>Arreicas:</strong> No presentan drenaje definido (zonas áridas).</li>
-    </ul>
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
 
-    <h2>Longitud del Cauce Principal</h2>
-    <p>
-        Es la distancia medida a lo largo del río principal desde la salida de la cuenca
-        hasta su punto más alto aguas arriba. Es un parámetro importante en el análisis del
-        tiempo de concentración.
-    </p>
+        h1, h2 {
+            color: #1f4e79;
+        }
 
-    <h2>Área de la Cuenca</h2>
-    <p>
-        El área de la cuenca es la superficie total drenada por el sistema hidrológico.
-        Se expresa generalmente en km² y es uno de los parámetros más importantes en hidrología.
-    </p>
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #1f4e79;
+            color: white;
+            font-size: 14px;
+        }
 
-    <h2>Pendiente Media del Cauce Principal</h2>
-    <p>
-        La pendiente media representa la inclinación promedio del cauce principal y afecta
-        directamente la velocidad del flujo.
-    </p>
+        a {
+            color: #0a9396;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    <h3>Métodos para calcularla</h3>
-    <ul>
-        <li><strong>Método de extremos:</strong> S = (Hmax - Hmin) / L</li>
-        <li><strong>Método de elevación media:</strong> Se divide el cauce en tramos y se promedian las pendientes.</li>
-        <li><strong>Método del perfil longitudinal:</strong> Se obtiene un perfil del río y se calcula la pendiente media.</li>
-    </ul>
-</section>
+        a:hover {
+            text-decoration: underline;
+        }
 
-<footer>
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1f4e79;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #163a5c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌊 Cuenca Hidrológica</h1>
+    <h2>Conceptos fundamentales de hidrología aplicada</h2>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📌 Definición</h2>
+        <p>
+            Una cuenca hidrológica es el área de terreno donde toda el agua de lluvia que cae
+            drena hacia un punto común, como un río, lago o presa.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🧭 Parteaguas o divisoria de aguas</h2>
+        <p>
+            Es la línea imaginaria que separa una cuenca de otra. Está formada por los puntos
+            más altos del terreno y determina la dirección del escurrimiento.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📍 Delimitación de cuencas</h2>
+        <p>
+            Consiste en trazar el contorno de la cuenca siguiendo las elevaciones del terreno.
+            Puede hacerse mediante cartografía o Sistemas de Información Geográfica (SIG).
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🌎 Tipos de cuencas</h2>
+        <ul>
+            <li><b>Exorreicas:</b> drenan hacia el mar.</li>
+            <li><b>Endorreicas:</b> el agua se acumula en el interior.</li>
+            <li><b>Arreicas:</b> sin drenaje definido.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📏 Longitud del cauce principal</h2>
+        <p>
+            Es la distancia medida a lo largo del río principal desde la salida de la cuenca
+            hasta su punto más alto aguas arriba.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📐 Área de la cuenca</h2>
+        <p>
+            Es la superficie total que drena hacia un punto de salida. Se expresa comúnmente en km²
+            y es uno de los parámetros más importantes en hidrología.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📊 Pendiente media del cauce principal</h2>
+        <p>
+            Representa la inclinación promedio del cauce principal y controla la velocidad del flujo.
+        </p>
+
+        <p><b>Métodos de cálculo:</b></p>
+        <ul>
+            <li>Método de extremos: (Hmax - Hmin) / L</li>
+            <li>Método de tramos: promedio de pendientes parciales</li>
+            <li>Perfil longitudinal del cauce</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="btn-container">
+            <a href="../index.html">← Volver al inicio</a>
+            <a class="btn" href="tc.html">Ir a Tiempo de Concentración →</a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
     <strong>Elaborado por:</strong> Héctor Giovanni Rodríguez Vázquez <br>
     <p>© 2026 Hidrología Aplicada</p>
 </footer>
+
+</body>
+</html>
