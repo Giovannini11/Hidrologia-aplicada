@@ -1,18 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Tiempo de Concentración</title>
+    <meta charset="UTF-8">
+    <title>Tiempo de Concentración (Tc)</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background-color: #0a1f2e;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #1f4e79;
+        }
+
+        .formula {
+            background: #eef6ff;
+            padding: 15px;
+            border-left: 5px solid #1f4e79;
+            font-family: monospace;
+            font-size: 18px;
+        }
+
+        a {
+            color: #0a9396;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Tiempo de Concentración (Tc)</h1>
 
-    <p>El tiempo de concentración es el tiempo que tarda el agua en viajar desde el punto más lejano de la cuenca hasta la salida.</p>
+<header>
+    <h1>⏱ Tiempo de Concentración (Tc)</h1>
+    <p>Hidrología aplicada a cuencas hidrográficas</p>
+</header>
 
-    <h2>Método de Kirpich</h2>
-    <p>Se usa para cuencas pequeñas:</p>
+<div class="container">
 
-    <p>Tc = 0.0195 * L^0.77 * S^-0.385</p>
+    <div class="card">
+        <h2>📌 Definición</h2>
+        <p>
+            El tiempo de concentración es el tiempo que tarda una gota de agua en viajar
+            desde el punto más alejado de la cuenca hasta la salida.
+            Es un parámetro fundamental en el análisis hidrológico de cuencas.
+        </p>
+    </div>
 
-    <a href="../index.html">← Volver al inicio</a>
+    <div class="card">
+        <h2>📐 Método de Kirpich</h2>
+        <p>
+            Este método se utiliza principalmente en cuencas pequeñas y rurales.
+        </p>
+
+        <div class="formula">
+            Tc = 0.0195 · L<sup>0.77</sup> · S<sup>-0.385</sup>
+        </div>
+
+        <p>
+            Donde:<br>
+            L = Longitud del cauce (m)<br>
+            S = Pendiente del cauce (m/m)
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🧠 Importancia</h2>
+        <p>
+            El Tc es clave para el diseño hidrológico, ya que permite estimar el tiempo de respuesta
+            de una cuenca ante eventos de lluvia intensa.
+        </p>
+    </div>
+
+    <a class="back" href="../index.html">← Volver al inicio</a>
+
+</div>
+
 </body>
 </html>
