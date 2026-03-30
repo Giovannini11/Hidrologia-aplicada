@@ -4,9 +4,9 @@
   <img src="images/portada.png" width="750">
 </p>
 
-<p align="center">
-  Blog técnico y repositorio de herramientas para ingeniería hidrológica
-</p>
+<h1><p align="center">
+  Repositorio técnico de herramientas para ingeniería hidrológica, enfocado a las inundaciones
+</p></h1>
 
 ---
 
