@@ -68,6 +68,35 @@
     color: white;
     font-size: 14px;
 }
+    .btn-calculadora {
+    display: inline-block;
+    background: #1f4e79;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn-calculadora:hover {
+    background: #163a5c;
+    transform: translateY(-2px);
+}
+
+        .btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+        .btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
     </style>
 </head>
 
@@ -165,14 +194,13 @@
           <b>El Tc es clave para el diseño hidrológico, ya que permite estimar el tiempo de respuesta
             de una cuenca ante eventos de lluvia intensa. </b>  
         </p>
-    </div>
+<div class="btn-container">
+    <a class="back" href="index.html">← Volver al inicio</a>
 
-    <a class="back" href="../index.html">← Volver al inicio</a>
-
-    <a class="back" href="tc_calculo.html">
-    🧮 Ir a calculadora de Tc →
-</a>
-
+    <a class="btn-calculadora" href="tc_calculo.html">
+        🧮 Ir a calculadora de Tc →
+    </a>
+</div>
 </div>
 <footer class="footer">
         <strong>Elaborado por:</strong> Héctor Giovanni Rodríguez Vázquez <br>
