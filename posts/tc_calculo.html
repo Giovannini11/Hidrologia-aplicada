@@ -11,12 +11,36 @@ body {
     margin: 0;
 }
 
+/* 🔵 Navegación */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav a {
+    background: #1f4e79;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    background: #163a5c;
+}
+
+/* 📦 Contenedor */
 .container {
     max-width: 700px;
     margin: auto;
-    padding: 30px;
+    padding: 25px;
 }
 
+/* 🧾 Tarjeta */
 .card {
     background: white;
     padding: 20px;
@@ -25,33 +49,47 @@ body {
     margin-bottom: 20px;
 }
 
+/* 📥 Inputs */
 input {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
+/* 🔘 Botón */
 button {
     background: #1f4e79;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
 button:hover {
     background: #163a5c;
 }
 
+/* 📊 Resultado */
 .result {
     margin-top: 15px;
     font-weight: bold;
+    line-height: 1.6;
 }
 </style>
 </head>
 
 <body>
+
+<!-- 🔵 NAVEGACIÓN -->
+<div class="nav">
+    <a href="index.html">← Teoría Tc</a>
+    <a href="tc_calculo.html">🔄 Nuevo cálculo</a>
+</div>
 
 <div class="container">
 
@@ -81,15 +119,20 @@ function calcular() {
     let S = parseFloat(document.getElementById("S").value);
     let D = parseFloat(document.getElementById("D").value);
 
-    // Kirpich (ejemplo clásico)
-// Kirpich (ejemplo clásico)
-let Tc_kirpich = 0.000325 * Math.pow(L / Math.sqrt(S), 0.77);
+    if (isNaN(L) || isNaN(S) || isNaN(D)) {
+        document.getElementById("resultado").innerHTML =
+        "⚠️ Ingresa todos los valores correctamente.";
+        return;
+    }
 
-// SCS
-let Tc_scs = Math.pow(L, 1.15) / (3085 * Math.pow(D, 0.38));
+    // 🔹 Kirpich (corregido)
+    let Tc_kirpich = 0.000325 * Math.pow(L / Math.sqrt(S), 0.77);
 
-// Rowe
-let Tc_rowe = Math.pow((0.87 * Math.pow(L/1000, 3) / D), 0.385);
+    // 🔹 SCS (TR-55)
+    let Tc_scs = Math.pow(L, 1.15) / (3085 * Math.pow(D, 0.38));
+
+    // 🔹 Rowe
+    let Tc_rowe = Math.pow((0.87 * Math.pow(L, 3) / D), 0.385);
 
     document.getElementById("resultado").innerHTML =
         "⏱ Kirpich: " + Tc_kirpich.toFixed(2) + " hr<br>" +
