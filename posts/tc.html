@@ -101,6 +101,85 @@
         </p>
     </div>
 
+
+    <div class="card">
+    <h2>📐 Método del SCS (TR-55)</h2>
+
+    <p>
+        El método del Soil Conservation Service (SCS), también conocido como TR-55,
+        estima el tiempo de concentración mediante una relación empírica basada en
+        la longitud del flujo y la diferencia de elevación.
+    </p>
+
+    <div class="formula">
+        Tc = ( L<sup>1.15</sup> / (3085 · D<sup>0.38</sup>) )
+    </div>
+
+    <p>
+        Donde:<br>
+        L = longitud del flujo hidráulico (m)<br>
+        D = diferencia de elevación (m)<br>
+        Tc = tiempo de concentración (horas)
+    </p>
+
+    <div class="highlight">
+        ⚠️ Este método es ampliamente usado en cuencas pequeñas y medianas, especialmente en análisis hidrológico con enfoque de diseño.
+    </div>
+</div>
+
+    <div class="card">
+    <h2>📐 Método del SCS (TR-55)</h2>
+
+    <p>
+        El método del <b>Soil Conservation Service (SCS)</b> estima el tiempo de concentración
+        como la suma de los tiempos de viaje en diferentes tramos del flujo.
+    </p>
+
+    <div class="formula">
+        Tc = Tt<sub>sheet</sub> + Tt<sub>shallow</sub> + Tt<sub>channel</sub>
+    </div>
+
+    <p>
+        Donde:<br>
+        Tt<sub>sheet</sub> = flujo laminar (superficie)<br>
+        Tt<sub>shallow</sub> = flujo en lámina concentrada<br>
+        Tt<sub>channel</sub> = flujo en cauce principal
+    </p>
+
+    <div class="highlight">
+        ⚠️ Este método es más detallado y se usa en cuencas urbanas y rurales con cambios de pendiente y cobertura.
+    </div>
+
+    <p>
+        En la práctica (TR-55), cada tramo se calcula con ecuaciones empíricas dependientes de:
+        longitud, rugosidad (n), pendiente y condición de flujo.
+    </p>
+</div>
+
+<div class="card">
+    <h2>📐 Método de ROWE</h2>
+
+    <p>
+        El método de Rowe es un enfoque empírico que relaciona el tiempo de concentración
+        con la longitud del cauce y la pendiente media.
+    </p>
+
+    <div class="formula">
+        Tc = a · L<sup>b</sup> · S<sup>c</sup>
+    </div>
+
+    <p>
+        Donde:<br>
+        L = longitud del cauce (m)<br>
+        S = pendiente del cauce (m/m)<br>
+        a, b, c = coeficientes empíricos (dependen del tipo de cuenca)
+    </p>
+
+    <div class="highlight">
+        ⚠️ Los coeficientes varían según región, tipo de suelo y cobertura vegetal.
+        Se recomienda calibración local.
+    </div>
+</div>
     <div class="card">
         <h2>🧠 Importancia</h2>
         <p>
