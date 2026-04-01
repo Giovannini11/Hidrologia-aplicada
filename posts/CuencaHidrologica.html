@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -92,15 +92,15 @@
 <div class="container">
 
     <div class="card">
-        <h2>📌 Definición</h2>
+        <h2> Definición</h2>
         <p>
-            Una cuenca hidrológica es el área de terreno donde toda el agua de lluvia que cae
-            drena hacia un punto común, como un río, lago o presa.
+            Una Cuenca es una zona de la supeficie terrestre en donde ( si fuera impermeable) las gotas de lluvia que caen sobre ella tienden a ser drenadas por el sistema de corrientes hacia un mismo punto de salida. 
+            La definición anterior se refiere a una cuenca superficial. 
         </p>
     </div>
 
     <div class="card">
-        <h2>🧭 Parteaguas o divisoria de aguas</h2>
+        <h2> Parteaguas o divisoria de aguas</h2>
         <p>
             Es la línea imaginaria que separa una cuenca de otra. Está formada por los puntos
             más altos del terreno y determina la dirección del escurrimiento.
@@ -108,32 +108,36 @@
     </div>
 
     <div class="card">
-        <h2>📍 Delimitación de cuencas</h2>
+        <h2>Delimitación de cuencas</h2>
         <p>
             Consiste en trazar el contorno de la cuenca siguiendo las elevaciones del terreno.
-            Puede hacerse mediante cartografía o Sistemas de Información Geográfica (SIG).
-        </p>
+            Puede hacerse mediante cartografía o Sistemas de Información Geográfica (SIG). 
+        </p><br>
+        <h3> ver cómo delimitar una cuenca con QGIS: Proximamente <h3> 
+
+        
     </div>
 
     <div class="card">
-        <h2>🌎 Tipos de cuencas</h2>
+        <h2> Tipos de cuencas</h2>
         <ul>
-            <li><b>Exorreicas:</b> drenan hacia el mar.</li>
-            <li><b>Endorreicas:</b> el agua se acumula en el interior.</li>
+            <li><b>Exorreicas:</b> drenan hacia hacia otras corrientes o hacia el mar.</li>
+            <li><b>Endorreicas:</b> el agua se acumula en el interior, por ejemplo un lago.</li>
             <li><b>Arreicas:</b> sin drenaje definido.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>📏 Longitud del cauce principal</h2>
+        <h2>Longitud del cauce principal</h2>
         <p>
+            La corriente principal de una cuenca es la corriente que paso por la salida de la misma. 
             Es la distancia medida a lo largo del río principal desde la salida de la cuenca
             hasta su punto más alto aguas arriba.
         </p>
     </div>
 
     <div class="card">
-        <h2>📐 Área de la cuenca</h2>
+        <h2> Área de la cuenca</h2>
         <p>
             Es la superficie total que drena hacia un punto de salida. Se expresa comúnmente en km²
             y es uno de los parámetros más importantes en hidrología.
@@ -141,9 +145,18 @@
     </div>
 
     <div class="card">
-        <h2>📊 Pendiente media del cauce principal</h2>
+        <h2> Pendiente media del cauce principal</h2>
         <p>
-            Representa la inclinación promedio del cauce principal y controla la velocidad del flujo.
+            Uno de los indicadores más importantes del grado de respuesta de una cuenca a una tormenta es la pendiente del auce principal.
+            Dicha pendiente representa la inclinación promedio del cauce principal y controla la velocidad del flujo. Existen diferentes métodos para estimar la pendiente, entre los más utilizados son:
+        </p> <br>
+        <p> a) La pendiente mdia es igual al desnivel entre los extremos de la corriente dividido entre su longitud media en planta</p>
+        <p> b) Taylor Schwarz. proponen calcular la pendiente media como la de un canal de sección transversal uniforme que tenga la misma longitud y tiempo de recorrido que la corriente en cuestión la cual está dada por la siguiente expressión </p>
+          
+        <p>
+        \[
+        S = \left( \frac{L}{\frac{l_1}{\sqrt{S_1}} + \frac{l_2}{\sqrt{S_2}} + \cdots + \frac{l_m}{\sqrt{S_m}}} \right)^2
+        \]
         </p>
 
         <p><b>Métodos de cálculo:</b></p>
