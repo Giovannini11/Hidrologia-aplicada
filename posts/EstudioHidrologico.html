@@ -1,0 +1,171 @@
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+
+// ===============================
+// FUNCIONES BASE
+// ===============================
+
+function calcular_xmed(Ac) {
+  return Math.exp(-0.00284 * Math.sqrt(Ac));
+}
+
+function calcular_tc(L, S, D) {
+  const Tc_kirpich = 0.000325 * Math.pow(L / Math.sqrt(S), 0.77);
+  const Tc_scs = Math.pow(L, 1.15) / (3085 * Math.pow(D, 0.38));
+  const Tc_rowe = Math.pow((0.87 * Math.pow(L / 1000, 3)) / D, 0.385);
+  return { Tc_kirpich, Tc_scs, Tc_rowe };
+}
+
+function interpolar_e(Tc) {
+  const puntos = [
+    [0, 0.8],
+    [1, 0.7],
+    [6, 0.6],
+    [24, 0.55],
+    [48, 0.5],
+    [100, 0.45],
+  ];
+
+  for (let i = 0; i < puntos.length - 1; i++) {
+    const [Tc1, e1] = puntos[i];
+    const [Tc2, e2] = puntos[i + 1];
+
+    if (Tc >= Tc1 && Tc <= Tc2) {
+      return e1 + ((e2 - e1) * (Tc - Tc1)) / (Tc2 - Tc1);
+    }
+  }
+  return puntos[puntos.length - 1][1];
+}
+
+function calcular_he(Hpd, Nc) {
+  const Hpd_cm = Hpd / 10;
+  const S_cm = 508 / Nc;
+  const Ia_cm = 5.08;
+  const He_cm = Math.pow(Hpd_cm - S_cm + Ia_cm, 2) / (Hpd_cm + 2032 / Nc - 20.32);
+  return He_cm * 10;
+}
+
+function hutTriangular(He, Ac, Tc) {
+  const de = Tc;
+  const Tp = 1.1 * Tc;
+  const N = Ac < 250 ? 2 : 2 + (Ac - 250) / 1583.33;
+  return (0.556 * He * Ac) / (N * Tp);
+}
+
+// ===============================
+// APP
+// ===============================
+
+export default function App() {
+  const [Ac, setAc] = useState(100);
+  const [L, setL] = useState(1000);
+  const [S, setS] = useState(0.02);
+  const [D, setD] = useState(10);
+  const [Nc, setNc] = useState(75);
+  const [lluvia, setLluvia] = useState("10 80\n20 95\n50 120");
+  const [resultados, setResultados] = useState([]);
+
+  function calcular() {
+    const xmed = calcular_xmed(Ac);
+    const { Tc_kirpich } = calcular_tc(L, S, D);
+    const Tc = Tc_kirpich;
+    const e = interpolar_e(Tc);
+
+    const lines = lluvia.trim().split("\n");
+    const data = [];
+
+    const Tp = 0.6 * Tc + Tc / 2;
+    const N = Ac < 250 ? 2 : 2 + (Ac - 250) / 1583.33;
+
+    for (let line of lines) {
+      const [Tr, Hp] = line.split(" ").map(Number);
+
+      const X24 = Hp * xmed;
+      const K = ((1 - e) * X24) / Math.pow(24, 1 - e);
+      const Hpd = (K * Math.pow(Tc, 1 - e)) / (1 - e);
+      const He = calcular_he(Hpd, Nc);
+
+      const Ce = He / Hpd || 0;
+      const I = K / ((1 - e) * Math.pow(Tc, e));
+
+      const Qr = 0.278 * Ce * I * Ac;
+      const Qh = (0.556 * He * Ac) / (N * Tp);
+      const Qc = Ac * (He / Tc) * 0.278 * 0.82;
+      const Qtri = hutTriangular(He, Ac, Tc);
+
+      data.push({ Tr, Qr, Qh, Qc, Qtri });
+    }
+
+    setResultados(data);
+  }
+
+  return (
+    <div className="p-4 grid gap-4">
+      <h1 className="text-xl font-bold">Software Hidrológico PRO</h1>
+
+      <Card>
+        <CardContent className="grid gap-2 p-4">
+          <Input value={Ac} onChange={(e) => setAc(+e.target.value)} placeholder="Ac" />
+          <Input value={L} onChange={(e) => setL(+e.target.value)} placeholder="L" />
+          <Input value={S} onChange={(e) => setS(+e.target.value)} placeholder="S" />
+          <Input value={D} onChange={(e) => setD(+e.target.value)} placeholder="D" />
+          <Input value={Nc} onChange={(e) => setNc(+e.target.value)} placeholder="Nc" />
+          <textarea
+            className="border p-2"
+            value={lluvia}
+            onChange={(e) => setLluvia(e.target.value)}
+            placeholder="Tr Hp"
+          />
+          <Button onClick={calcular}>Calcular</Button>
+        </CardContent>
+      </Card>
+
+      <Tabs defaultValue="tabla">
+        <TabsList>
+          <TabsTrigger value="tabla">Tabla</TabsTrigger>
+          <TabsTrigger value="grafica">Gráfica</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="tabla">
+          <table className="w-full border">
+            <thead>
+              <tr>
+                <th>Tr</th><th>Racional</th><th>HUT</th><th>Chow</th><th>Triangular</th>
+              </tr>
+            </thead>
+            <tbody>
+              {resultados.map((r, i) => (
+                <tr key={i}>
+                  <td>{r.Tr}</td>
+                  <td>{r.Qr.toFixed(3)}</td>
+                  <td>{r.Qh.toFixed(3)}</td>
+                  <td>{r.Qc.toFixed(3)}</td>
+                  <td>{r.Qtri.toFixed(3)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TabsContent>
+
+        <TabsContent value="grafica">
+          <ResponsiveContainer width="100%" height={400}>
+            <LineChart data={resultados}>
+              <XAxis dataKey="Tr" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="Qr" name="Racional" />
+              <Line type="monotone" dataKey="Qh" name="HUT" />
+              <Line type="monotone" dataKey="Qc" name="Chow" />
+              <Line type="monotone" dataKey="Qtri" name="Triangular" />
+            </LineChart>
+          </ResponsiveContainer>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
