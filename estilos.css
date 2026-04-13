@@ -8,19 +8,20 @@
 /* BODY */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #eef3f9;
+    background: white;
+    color: #1a1a1a;
 }
 
-/* HEADER (FIX COLOR) */
+/* HEADER */
 header {
     background: linear-gradient(135deg, #0b2545, #1b4965);
     color: white;
-    padding: 60px 20px;
+    padding: 70px 20px;
     text-align: center;
 }
 
 header h1, header h2 {
-    color: white; /* 🔥 SOLUCIÓN */
+    color: white;
 }
 
 /* NAV */
@@ -29,7 +30,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 15px;
+    padding: 12px;
 }
 
 nav a {
@@ -43,9 +44,10 @@ nav a:hover {
 
 /* CONTENEDOR */
 .container {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: auto;
-    padding: 40px;
+    padding: 40px 20px;
+
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
@@ -53,22 +55,20 @@ nav a:hover {
         "temas herramientas"
         "autor autor"
         "perfiles perfiles";
-    gap: 25px;
+    gap: 40px;
 }
 
-/* MAPEO */
+/* ÁREAS */
 .bienvenida { grid-area: bienvenida; }
 .temas { grid-area: temas; }
 .herramientas { grid-area: herramientas; }
 .autor { grid-area: autor; }
 .perfiles { grid-area: perfiles; }
 
-/* CARDS */
+/* BLOQUES CONTINUOS */
 .card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 /* TITULOS */
@@ -77,22 +77,26 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* TEXTO */
+p {
+    line-height: 1.7;
+}
+
 /* LISTAS */
 ul {
-    padding-left: 20px;
+    padding-left: 18px;
 }
 
 li {
+    margin-bottom: 8px;
+}
+
+/* TEMAS (MEJOR LECTURA) */
+.temas li {
     margin-bottom: 10px;
 }
 
-/* 🔥 TEMAS MEJORADOS */
-.temas ul li {
-    padding: 6px 0;
-    border-bottom: 1px solid #eee;
-}
-
-/* 🔥 HERRAMIENTAS COMO PANEL */
+/* HERRAMIENTAS (MINIMALISTA) */
 .tools-list {
     list-style: none;
     padding: 0;
@@ -103,38 +107,32 @@ li {
 }
 
 .tools-list a {
-    display: block;
-    padding: 12px;
-    background: #0b2545;
-    color: white;
-    border-radius: 8px;
+    color: #0b2545;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .tools-list a:hover {
-    background: #1b4965;
+    text-decoration: underline;
 }
 
-/* 🔥 PERFILES */
+/* PERFILES */
 .perfiles ul {
     list-style: none;
     padding: 0;
 }
 
 .perfiles li {
-    margin-bottom: 8px;
-}
-
-.perfiles a {
-    color: #0077b6;
+    margin-bottom: 6px;
 }
 
 /* FOOTER */
 footer {
-    background: #0b2545;
-    color: white;
-    text-align: center;
+    margin-top: 50px;
     padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
 }
 
 /* RESPONSIVE */
