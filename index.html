@@ -4,65 +4,14 @@
     <meta charset="UTF-8">
     <title>Hidrología Aplicada</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-        }
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background-color: #b8b9d4;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        nav {
-            background-color: #163a5f;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            padding: 30px;
-        }
-
-        h1, h2 {
-            color: #1f4e79;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        a {
-            color: #0a9396;
-        }
-
-        footer {
-            background-color: #1f4e79;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-    </style>
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -70,13 +19,16 @@
 <header>
     <h1>🌊 Hidrología Aplicada</h1>
     <h2>Repositorio técnico de ingeniería hidrológica</h2>
+    <p style="opacity:0.8;">
+        Ingeniería Hidrológica | Modelación | Análisis de Inundaciones
+    </p>
 </header>
 
 <nav>
     <a href="index.html">Inicio</a>
     <a href="#">Temas</a>
     <a href="#">Programas</a>
-    <a href="posts/EstudioHidrologico.html">Estudio Hidrológico Simple</a>
+    <a href="posts/EstudioHidrologico.html">Estudio Hidrológico</a>
 </nav>
 
 <div class="container">
@@ -85,67 +37,64 @@
         <h2>Bienvenido</h2>
         <p>
             Este repositorio está enfocado en el análisis hidrológico aplicado a ingeniería civil,
-            incluyendo métodos de cálculo, modelación hidrologica e hidrodinámica con herramietnas como 
-            HEC-RAS, HEC-HMS, IBER, QGIS, Python, GEE. Analisis práctico de inundaciones y criterios técnicos simples comunmente utilizados en México.
+            incluyendo métodos de cálculo, modelación hidrológica e hidrodinámica con herramientas como 
+            HEC-RAS, HEC-HMS, IBER, QGIS, Python y Google Earth Engine.
+            Se presentan análisis prácticos de inundaciones y criterios técnicos utilizados en México.
         </p>
     </div>
 
     <div class="card">
         <h2>Temas</h2>
         <ul>
-              <li><a href="posts/CuencaHidrologica.html">¿Qué es una Cuenca? </a>  </li>
-          
-            <li><a href="posts/tc.html">Tiempo de Concentración, ¿Para qué sirve? </a>
-            </li>
-              <li><a href="posts/DelimitarCuencaQGIS.html">¿Cómo puedo delimitar una cuenca? </a>
-            </li>
-            <li><a href="posts/InundacionesUrbanas.html">Inundaciones en Zonas Urbanas </a>
-            </li>
-            <li>Próximamente: ¿Qué es y para qué sirve el periodod de retorno? </li>
-            
-             <li>Próximamente: Número de Curva</li>
-             <li>Próximamente: Estaciones climatologicas</li>
+            <li><a href="posts/CuencaHidrologica.html">¿Qué es una Cuenca?</a></li>
+            <li><a href="posts/tc.html">Tiempo de Concentración, ¿Para qué sirve?</a></li>
+            <li><a href="posts/DelimitarCuencaQGIS.html">¿Cómo delimitar una cuenca?</a></li>
+            <li><a href="posts/InundacionesUrbanas.html">Inundaciones en zonas urbanas</a></li>
+            <li>Próximamente: ¿Qué es y para qué sirve el periodo de retorno?</li>
+            <li>Próximamente: Número de curva</li>
+            <li>Próximamente: Estaciones climatológicas</li>
             <li>Próximamente: Método de Thiessen</li>
-            <li><a href="posts/EstudioHidrologico.html">Próximamente: Estudio hidrologico empleando métodos de Simples </a></li>
-            <li>Próximamente: Estaciones Meteorologicas Automáticas</li>
+            <li><a href="posts/EstudioHidrologico.html">Estudio hidrológico con métodos simples</a></li>
+            <li>Próximamente: Estaciones meteorológicas automáticas</li>
             <li>Próximamente: Pendiente media del cauce principal</li>
             <li>Próximamente: Tormentas sintéticas</li>
-            <li>Próximamente: Volumen de escurrimiento Medio Anual </li>
-            <li>Próximamente:Cálculo hidráulico de canales y tubos a superficie libre</li>
-            <li>Próximamente: Criterios de diseño de colectores</li>+
+            <li>Próximamente: Volumen de escurrimiento medio anual</li>
+            <li>Próximamente: Cálculo hidráulico de canales y tubos a superficie libre</li>
+            <li>Próximamente: Criterios de diseño de colectores</li>
             <li>Próximamente: Periodos de retorno</li>
             <li>Próximamente: Socavación general en cauces</li>
-             <li>Próximamente: Modelación con QGIS</li>
-             <li>Próximamente: Modelación con HEC-HMS</li>
+            <li>Próximamente: Modelación con QGIS</li>
+            <li>Próximamente: Modelación con HEC-HMS</li>
             <li>Próximamente: Modelación con HEC-RAS</li>
             <li>Próximamente: Modelación con IBER</li>
-           
         </ul>
     </div>
 
     <div class="card">
         <h2>Sobre el autor</h2>
         <p>
-            Héctor Giovanni Rodríguez Vázquez -Investigador enfocado en el análisis y modelación de procesos hidrológicos e hidráulicos, con interés en el estudio de inundaciones en zonas urbanas. 
-            Cuento con experiencia en el uso de herramientas como HEC-HMS, HEC-RAS y QGIS para la simulación de cuencas, evaluación de escurrimientos y análisis de riesgos. 
-            Mi trabajo se orienta a la generación de soluciones técnicas para la prevención y mitigación de inundaciones, integrando enfoques tanto estructurales como no estructurales.
+            Héctor Giovanni Rodríguez Vázquez. Investigador enfocado en el análisis y modelación
+            de procesos hidrológicos e hidráulicos, con interés en el estudio de inundaciones en zonas urbanas. 
+            Cuenta con experiencia en el uso de herramientas como HEC-HMS, HEC-RAS y QGIS para la simulación de cuencas, 
+            evaluación de escurrimientos y análisis de riesgos. Su trabajo se orienta a la generación de soluciones técnicas 
+            para la prevención y mitigación de inundaciones.
+        </p>
+    </div>
+
+    <div class="card perfil">
+        <h2>Perfiles académicos</h2>
+        <p>
+            <a href="https://scholar.google.com/citations?user=2wugn1EAAAAJ&hl=es" target="_blank">Google Scholar</a><br>
+            <a href="https://www.researchgate.net/profile/Hector-Giovanni-Vazquez" target="_blank">ResearchGate</a><br>
+            <a href="https://unam1.academia.edu/HECTORGIOVANNIRODRIGUEZVAZQUEZ" target="_blank">Academia.edu</a>
         </p>
     </div>
 
 </div>
 
-    <div class="card">
-    <h2>Perfiles académicos</h2>
-
-    <p>
-        <a href="https://scholar.google.com/citations?user=2wugn1EAAAAJ&hl=es" target="_blank">Google Scholar</a><br>
-        <a href="https://www.researchgate.net/profile/Hector-Giovanni-Vazquez" target="_blank">ResearchGate</a><br>
-        <a href="https://unam1.academia.edu/HECTORGIOVANNIRODRIGUEZVAZQUEZ" target="_blank">Academia.edu</a>
-    </p>
-</div>
 <footer>
-     <strong>Elaborado por:</strong> Héctor Giovanni Rodríguez Vázquez <br>
-        <p>© 2026 Hidrología Aplicada</p>
+    <strong>Elaborado por:</strong> Héctor Giovanni Rodríguez Vázquez <br>
+    <p>© 2026 Hidrología Aplicada</p>
 </footer>
 
 </body>
