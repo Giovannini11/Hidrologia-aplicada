@@ -1,157 +1,151 @@
-/* ===============================
-   🔹 RESET
-=============================== */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===============================
-   🔹 BODY
-=============================== */
+/* BODY */
 body {
     font-family: 'Poppins', sans-serif;
     background: #eef3f9;
-    color: #1a1a1a;
 }
 
-/* ===============================
-   🔹 HEADER
-=============================== */
+/* HEADER (FIX COLOR) */
 header {
-    background: linear-gradient(135deg, #0b2545, #133c67);
+    background: linear-gradient(135deg, #0b2545, #1b4965);
     color: white;
     padding: 60px 20px;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.8em;
+header h1, header h2 {
+    color: white; /* 🔥 SOLUCIÓN */
 }
 
-header h2 {
-    font-weight: 300;
-}
-
-/* ===============================
-   🔹 NAVBAR
-=============================== */
+/* NAV */
 nav {
     background: #0b2545;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     padding: 15px;
-    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
 }
 
 nav a:hover {
     color: #00b4d8;
 }
 
-/* ===============================
-   🔹 CONTENEDOR (AQUÍ ESTÁ LA MAGIA)
-=============================== */
+/* CONTENEDOR */
 .container {
-    width: 100%;
-    max-width: 1600px;   /* 🔥 evita que se vea angosto */
-    margin: 0 auto;
-    padding: 40px 60px;
-
+    max-width: 1500px;
+    margin: auto;
+    padding: 40px;
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    gap: 30px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "bienvenida bienvenida"
+        "temas herramientas"
+        "autor autor"
+        "perfiles perfiles";
+    gap: 25px;
 }
 
-/* ===============================
-   🔹 CARDS
-=============================== */
+/* MAPEO */
+.bienvenida { grid-area: bienvenida; }
+.temas { grid-area: temas; }
+.herramientas { grid-area: herramientas; }
+.autor { grid-area: autor; }
+.perfiles { grid-area: perfiles; }
+
+/* CARDS */
 .card {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    transition: 0.3s;
-    min-height: 120px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* ===============================
-   🔹 PRIMERA TARJETA GRANDE
-   (SIN CAMBIAR TU HTML)
-=============================== */
-.container .card:first-child {
-    grid-column: 1 / -1;
-}
-
-/* ===============================
-   🔹 ÚLTIMA TARJETA GRANDE
-=============================== */
-.container .card:last-child {
-    grid-column: 1 / -1;
-}
-
-/* ===============================
-   🔹 TEXTOS
-=============================== */
-h1, h2 {
+/* TITULOS */
+h2 {
     color: #133c67;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-p {
-    line-height: 1.6;
-}
-
-/* ===============================
-   🔹 LISTAS
-=============================== */
+/* LISTAS */
 ul {
     padding-left: 20px;
 }
 
 li {
+    margin-bottom: 10px;
+}
+
+/* 🔥 TEMAS MEJORADOS */
+.temas ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* 🔥 HERRAMIENTAS COMO PANEL */
+.tools-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tools-list li {
+    margin-bottom: 10px;
+}
+
+.tools-list a {
+    display: block;
+    padding: 12px;
+    background: #0b2545;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.tools-list a:hover {
+    background: #1b4965;
+}
+
+/* 🔥 PERFILES */
+.perfiles ul {
+    list-style: none;
+    padding: 0;
+}
+
+.perfiles li {
     margin-bottom: 8px;
 }
 
-/* ===============================
-   🔹 LINKS
-=============================== */
-a {
+.perfiles a {
     color: #0077b6;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* ===============================
-   🔹 FOOTER
-=============================== */
+/* FOOTER */
 footer {
     background: #0b2545;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
 }
 
-/* ===============================
-   🔹 RESPONSIVE
-=============================== */
-@media (max-width: 1000px) {
+/* RESPONSIVE */
+@media (max-width: 900px) {
     .container {
         grid-template-columns: 1fr;
-        padding: 25px;
+        grid-template-areas:
+            "bienvenida"
+            "temas"
+            "herramientas"
+            "autor"
+            "perfiles";
     }
 }
