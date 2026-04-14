@@ -1,85 +1,11 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Cuenca Hidrológica</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #222;
-        }
-
-        header {
-            background-color: #b8b9d4;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        h1, h2 {
-            color: #1f4e79;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background: #1f4e79;
-            color: white;
-            font-size: 14px;
-        }
-
-        a {
-            color: #0a9396;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #1f4e79;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #163a5c;
-            transform: translateY(-2px);
-        }
-    </style>
+    <!-- 🔹 CSS GLOBAL -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -89,94 +15,115 @@
     <h2>Conceptos fundamentales de hidrología aplicada</h2>
 </header>
 
-<div class="container">
+<nav>
+    <a href="../index.html">Inicio</a>
+    <a href="tc.html">Tiempo de Concentración</a>
+</nav>
 
-    <div class="card">
-        <h2> Definición</h2>
+<!-- 🔹 DEFINICIÓN -->
+<section>
+    <div class="contenido">
+        <h2>Definición</h2>
         <p>
-            Una Cuenca es una zona de la supeficie terrestre en donde ( si fuera impermeable) las gotas de lluvia que caen sobre ella tienden a ser drenadas por el sistema de corrientes hacia un mismo punto de salida. 
-            La definición anterior se refiere a una cuenca superficial. 
+            Una cuenca es una zona de la superficie terrestre en donde las gotas de lluvia
+            que caen sobre ella tienden a ser drenadas por un sistema de corrientes hacia
+            un mismo punto de salida.
         </p>
     </div>
+</section>
 
-    <div class="card">
-        <h2> Parteaguas o divisoria de aguas</h2>
+<!-- 🔹 PARTEAGUAS -->
+<section>
+    <div class="contenido">
+        <h2>Parteaguas o divisoria de aguas</h2>
         <p>
             Es la línea imaginaria que separa una cuenca de otra. Está formada por los puntos
             más altos del terreno y determina la dirección del escurrimiento.
         </p>
     </div>
+</section>
 
-    <div class="card">
+<!-- 🔹 DELIMITACIÓN -->
+<section>
+    <div class="contenido">
         <h2>Delimitación de cuencas</h2>
         <p>
             Consiste en trazar el contorno de la cuenca siguiendo las elevaciones del terreno.
-            Puede hacerse mediante cartografía o Sistemas de Información Geográfica (SIG). 
-        </p><br>
-        <h3> ver cómo delimitar una cuenca con QGIS: Proximamente <h3> 
+            Puede hacerse mediante cartografía o Sistemas de Información Geográfica (SIG).
+        </p>
 
-        
+        <h3>Ver cómo delimitar una cuenca con QGIS: Próximamente</h3>
     </div>
+</section>
 
-    <div class="card">
-        <h2> Tipos de cuencas</h2>
+<!-- 🔹 TIPOS -->
+<section>
+    <div class="contenido">
+        <h2>Tipos de cuencas</h2>
         <ul>
-            <li><b>Exorreicas:</b> drenan hacia hacia otras corrientes o hacia el mar.</li>
-            <li><b>Endorreicas:</b> el agua se acumula en el interior, por ejemplo un lago.</li>
+            <li><b>Exorreicas:</b> drenan hacia el mar u otras corrientes.</li>
+            <li><b>Endorreicas:</b> el agua se acumula en el interior.</li>
             <li><b>Arreicas:</b> sin drenaje definido.</li>
         </ul>
     </div>
+</section>
 
-    <div class="card">
+<!-- 🔹 LONGITUD -->
+<section>
+    <div class="contenido">
         <h2>Longitud del cauce principal</h2>
         <p>
-            La corriente principal de una cuenca es la corriente que paso por la salida de la misma. 
             Es la distancia medida a lo largo del río principal desde la salida de la cuenca
             hasta su punto más alto aguas arriba.
         </p>
     </div>
+</section>
 
-    <div class="card">
-        <h2> Área de la cuenca</h2>
+<!-- 🔹 ÁREA -->
+<section>
+    <div class="contenido">
+        <h2>Área de la cuenca</h2>
         <p>
-            Es la superficie total que drena hacia un punto de salida. Se expresa comúnmente en km²
-            y es uno de los parámetros más importantes en hidrología.
+            Es la superficie total que drena hacia un punto de salida. Se expresa
+            comúnmente en km² y es uno de los parámetros más importantes en hidrología.
         </p>
     </div>
+</section>
 
-    <div class="card">
-        <h2> Pendiente media del cauce principal</h2>
+<!-- 🔹 PENDIENTE -->
+<section>
+    <div class="contenido">
+        <h2>Pendiente media del cauce principal</h2>
         <p>
-            Uno de los indicadores más importantes del grado de respuesta de una cuenca a una tormenta es la pendiente del auce principal.
-            Dicha pendiente representa la inclinación promedio del cauce principal y controla la velocidad del flujo. Existen diferentes métodos para estimar la pendiente, entre los más utilizados son:
-        </p> <br>
-        <p> a) La pendiente mdia es igual al desnivel entre los extremos de la corriente dividido entre su longitud media en planta</p>
-        <p> b) Taylor Schwarz. proponen calcular la pendiente media como la de un canal de sección transversal uniforme que tenga la misma longitud y tiempo de recorrido que la corriente en cuestión la cual está dada por la siguiente expressión </p>
-          
-       <p>
-        S = [ L / (l1/√S1 + l2/√S2 + ... + lm/√Sm) ]²
+            Representa la inclinación promedio del cauce principal y controla la velocidad del flujo.
         </p>
+
+        <p><b>Expresión:</b></p>
+        <p>S = [ L / (l1/√S1 + l2/√S2 + ... + lm/√Sm) ]²</p>
 
         <p><b>Métodos de cálculo:</b></p>
         <ul>
-            <li>Método de extremos: (Hmax - Hmin) / L</li>
-            <li>Método de tramos: promedio de pendientes parciales</li>
-            <li>Perfil longitudinal del cauce</li>
+            <li>Método de extremos</li>
+            <li>Método de tramos</li>
+            <li>Perfil longitudinal</li>
         </ul>
     </div>
+</section>
 
-    <div class="card">
-        <div class="btn-container">
-            <a href="../index.html">← Volver al inicio</a>
-            <a class="btn" href="tc.html">Ir a Tiempo de Concentración →</a>
-        </div>
+<!-- 🔹 NAVEGACIÓN -->
+<section>
+    <div class="contenido" style="display:flex; justify-content:space-between;">
+        <a href="../index.html">← Volver al inicio</a>
+        <a href="tc.html">Ir a Tiempo de Concentración →</a>
     </div>
+</section>
 
-</div>
-
-<footer class="footer">
-    <strong>Elaborado por:</strong> Héctor Giovanni Rodríguez Vázquez <br>
-    <p>© 2026 Hidrología Aplicada</p>
+<!-- 🔹 FOOTER -->
+<footer>
+    <div class="contenido">
+        <strong>Elaborado por:</strong> Héctor Giovanni Rodríguez Vázquez
+        <p>© 2026 Hidrología Aplicada</p>
+    </div>
 </footer>
 
 </body>
