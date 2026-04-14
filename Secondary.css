@@ -1,0 +1,82 @@
+
+/* ============================= */
+/* CSS SECUNDARIO - DOCUMENTOS   */
+/* HIDROLOGÍA APLICADA           */
+/* ============================= */
+
+/* BASE SIN CAJAS */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+/* CONTENIDO FLUIDO (CLAVE) */
+.main-content {
+    width: 100%;
+    padding: 40px 8%;
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+    color: #0a3d62;
+    margin-bottom: 15px;
+}
+
+/* TEXTO CONTINUO (NO BLOQUES) */
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+/* ============================= */
+/* IMÁGENES PROFESIONALES        */
+/* ============================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* IMAGEN TIPO FIGURA TÉCNICA */
+.figure {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.figure img {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* CAPTION */
+.caption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* ============================= */
+/* SEPARADORES SUAVES            */
+/* ============================= */
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+/* LISTAS TÉCNICAS */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
